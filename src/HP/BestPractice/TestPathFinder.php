@@ -83,7 +83,7 @@ class TestPathFinder
      */
     public function isCustomModulePath($filesystem)
     {
-        return $filesystem->exists(APP_PATH . 'vendor/blueacorn/module-bestpractices/') &&
+        return $filesystem->exists(APP_PATH . 'vendor/hp/module-bestpractice/src/') &&
             !$filesystem->exists(APP_PATH . "__diff/") &&
             $filesystem->exists(APP_PATH . 'registration.php');
     }
@@ -95,7 +95,7 @@ class TestPathFinder
      */
     public function isMagentoInstallationPath($filesystem)
     {
-        return $filesystem->exists(APP_PATH . 'vendor/blueacorn/module-bestpractices/');
+        return $filesystem->exists(APP_PATH . 'vendor/hp/module-bestpractice/src/');
     }
 
     /**

@@ -8,9 +8,9 @@ if (!defined('BP')) {
 
 error_reporting(E_ERROR | E_PARSE);
 
-if (is_dir(APP_PATH . 'vendor/hp/module-bestpractice/')) {
+if (is_dir(APP_PATH . 'vendor/hp/module-bestpractice/src/')) {
     // running inside project
-    define('SCRIPT_ROOT', APP_PATH . 'vendor/hp/module-bestpractice/');
+    define('SCRIPT_ROOT', APP_PATH . 'vendor/hp/module-bestpractice/src/');
     if (!is_dir(APP_PATH."__diff/")) {
 
         if (is_file(APP_PATH.'registration.php')) {
