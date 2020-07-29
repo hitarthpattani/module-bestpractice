@@ -1,0 +1,18 @@
+---
+HeaderComments: 
+  require-passing: true
+
+MessDetector:
+  require-passing: true
+
+CodeSniffer:
+  require-passing: true
+
+CopyPaste:
+  require-passing: true
+
+UnitTester:
+  require-passing: true
+
+DocDetect:
+  require-passing: true

@@ -1,0 +1,20 @@
+---
+Module_Namespace: 
+  HP:
+    HeaderComments: true
+    MessDetector: true
+    CodeSniffer: true
+    CopyPaste: true
+    UnitTester: true
+    DocDetect: true
+    CodeSnifferFixer: true
+
+Theme_Namespace: 
+  HP:
+    HeaderComments: true
+    MessDetector: true
+    CodeSniffer: true
+    CopyPaste: true
+    UnitTester: true
+    DocDetect: true
+    CodeSnifferFixer: true
