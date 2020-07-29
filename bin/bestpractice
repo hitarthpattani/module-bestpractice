@@ -1,53 +1,10 @@
 #!/usr/bin/env php
 <?php
-define('APP_PATH', getcwd()."/");
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+$container = require __DIR__ . '/../bootstrap.php';
 
-if (!defined('BP')) {
-    define('BP', APP_PATH);
-}
-
-error_reporting(E_ERROR | E_PARSE);
-
-if (is_dir(APP_PATH . 'vendor/hp/module-bestpractice/src/')) {
-    // running inside project
-    define('SCRIPT_ROOT', APP_PATH . 'vendor/hp/module-bestpractice/src/');
-    if (!is_dir(APP_PATH."__diff/")) {
-
-        if (is_file(APP_PATH.'registration.php')) {
-            // running against a magento module
-
-            if (!class_exists('\Magento\Framework\Component\ComponentRegistrar')) {
-                require_once SCRIPT_ROOT.'HP/BestPractice/Namespace.php';
-            }
-
-            define('SCRIPT_ROOT', APP_PATH);
-        }
-    }
-} else {
-    // running against self
-    define('SCRIPT_ROOT', APP_PATH);
-}
-
-require_once APP_PATH . 'vendor/autoload.php';
-
-use Symfony\Component\Console\Application;
-
-$loader = new \Composer\Autoload\ClassLoader();
-$loader->register();
-$loader->add('HP\\BestPractice\\', SCRIPT_ROOT);
-$loader->setPsr4('HP\\BestPractice\\', [SCRIPT_ROOT]);
-
-$loader->setUseIncludePath(true);
-
-$application = new Application('bestpractice');
-
-$application->add(new \HP\BestPractice\Command\RunCommand());
-$application->add(new \HP\BestPractice\Command\RunListCommand());
-$application->add(new \HP\BestPractice\Command\RunCodeSnifferFixerCommand());
-
-$runcommand = new \HP\BestPractice\Command\RunAllCommand();
-$application->add($runcommand);
-// $application->setDefaultCommand($runcommand->getName());
-
-
+$application = new \HP\BestPractice\Application($container);
 $application->run();
