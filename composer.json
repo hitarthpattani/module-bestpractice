@@ -22,6 +22,8 @@
         "magento/magento-coding-standard": "^3 || ^4 || ^5",
         "sebastian/phpcpd": "^2 || ^3 || ^4",
         "phpunit/phpunit": "^6 || ^7.0 || ^8.0",
+        "composer/composer": "^1.4",
+        "composer/semver": "^1.4",
     	"monolog/monolog": "^1.16",
         "psr/container": "^1.0",
 	    "psr/log": "^1.0",
