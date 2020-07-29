@@ -8,6 +8,10 @@ date_default_timezone_set('UTC');
 
 require_once __DIR__ . '/autoload.php';
 
-use HP\BestPractice\App\Container;
+use HP\BestPractice\Test;
 
-return new Container(BESTPRACTICE_BP, BP);
+return new Test();
+
+// use HP\BestPractice\App\Container;
+
+// return new Container(BESTPRACTICE_BP, BP);
