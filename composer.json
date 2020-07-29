@@ -1,0 +1,44 @@
+{
+    "name": "hp/module-bestpractice",
+    "description": "a test suite that runs a whole mess of code sniffers and static code analaysis.",
+    "type": "library",
+    "version": "1.4.2",
+    "keywords": [
+        "bestpractice",
+        "standards"
+    ],
+    "authors": [
+        {
+            "name": "Hitarth Pattani",
+            "role": "Author"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=7.1.0",
+        "phpmd/phpmd": "^2.7",
+        "squizlabs/php_codesniffer": "^3",
+        "magento/magento-coding-standard": "^3 || ^4 || ^5",
+        "sebastian/phpcpd": "^2 || ^3 || ^4",
+        "symfony/process": "*",
+        "phpunit/phpunit": "^6 || ^7.0 || ^8.0",
+        "symfony/yaml": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "HP\\BestPractice\\": ""
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "([ $COMPOSER_DEV_MODE -eq 0 ] || vendor/bin/phpcs --config-set installed_paths ../../magento/magento-coding-standard/)"
+        ],
+        "post-update-cmd": [
+            "([ $COMPOSER_DEV_MODE -eq 0 ] || vendor/bin/phpcs --config-set installed_paths ../../magento/magento-coding-standard/)"
+        ]
+    },
+    "bin": [
+        "bin/bestpractice"
+    ]
+}
