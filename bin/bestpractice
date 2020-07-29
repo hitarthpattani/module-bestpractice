@@ -4,9 +4,9 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-$test = require __DIR__ . '/../bootstrap.php';
+$container = require __DIR__ . '/../bootstrap.php';
 
-var_dump(get_class($test));
+$application = new \HP\BestPractice\Application($container);
+$application->run();
 
-// $application = new \HP\BestPractice\Application($container);
-// $application->run();
+var_dump("ABC");
