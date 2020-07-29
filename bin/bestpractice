@@ -35,7 +35,7 @@ use Symfony\Component\Console\Application;
 $loader = new \Composer\Autoload\ClassLoader();
 $loader->register();
 $loader->add('HP\\BestPractice\\', SCRIPT_ROOT);
-$loader->setPsr4('HP\\BestPractice\\', SCRIPT_ROOT);
+$loader->setPsr4('HP\\BestPractice\\', [SCRIPT_ROOT]);
 
 $loader->setUseIncludePath(true);
 
